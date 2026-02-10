@@ -262,7 +262,14 @@ function ProductCard({ product, index, viewMode }: { product: Product; index: nu
   const { addItem: addToWishlist, removeItem: removeFromWishlist, isInWishlist } = useWishlistStore()
 
   const handleAddToCart = () => {
-    addItem(product)
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      size: product.size || '50ml',
+      quantity: 1,
+    })
     toast({ title: 'Added to bag', description: `${product.name} has been added.` })
     openCart()
   }
@@ -271,7 +278,12 @@ function ProductCard({ product, index, viewMode }: { product: Product; index: nu
     if (isInWishlist(product.id)) {
       removeFromWishlist(product.id)
     } else {
-      addToWishlist(product)
+      addToWishlist({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+      })
     }
   }
 

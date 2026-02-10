@@ -72,9 +72,14 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const isDetailsInView = useInView(detailsRef, { once: true, margin: '-100px' })
 
   const handleAddToCart = () => {
-    for (let i = 0; i < quantity; i++) {
-      addItem({ ...product, price: selectedSize.price, size: selectedSize.size })
-    }
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: selectedSize.price,
+      image: product.image,
+      size: selectedSize.size,
+      quantity: quantity,
+    })
     toast({
       title: 'Added to bag',
       description: `${quantity}x ${product.name} (${selectedSize.size}) has been added.`,
@@ -87,7 +92,12 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       removeFromWishlist(product.id)
       toast({ title: 'Removed from wishlist' })
     } else {
-      addToWishlist(product)
+      addToWishlist({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+      })
       toast({ title: 'Added to wishlist' })
     }
   }
@@ -305,6 +315,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             </motion.div>
 
             {/* Notes Pyramid */}
+            {product.notes && (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isDetailsInView ? { opacity: 1, y: 0 } : {}}
@@ -373,6 +384,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                 </div>
               </div>
             </motion.div>
+            )}
           </div>
         </div>
       </section>
