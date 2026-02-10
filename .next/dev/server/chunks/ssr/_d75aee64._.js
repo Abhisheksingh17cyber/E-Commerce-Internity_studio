@@ -27,7 +27,8 @@ const Providers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modul
     throw new Error("Attempted to call Providers() from the server but Providers is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
 }, "[project]/src/components/providers.tsx", "Providers");
 }),
-"[project]/src/components/providers.tsx [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/src/components/providers.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
 
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$providers$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/src/components/providers.tsx [app-rsc] (client reference proxy) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$providers$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__ = __turbopack_context__.i("[project]/src/components/providers.tsx [app-rsc] (client reference proxy)");
@@ -62,7 +63,8 @@ const Header = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$
     throw new Error("Attempted to call Header() from the server but Header is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
 }, "[project]/src/components/layout/header.tsx", "Header");
 }),
-"[project]/src/components/layout/header.tsx [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/src/components/layout/header.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
 
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$header$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/src/components/layout/header.tsx [app-rsc] (client reference proxy) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$header$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__ = __turbopack_context__.i("[project]/src/components/layout/header.tsx [app-rsc] (client reference proxy)");
@@ -97,7 +99,8 @@ const Footer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$
     throw new Error("Attempted to call Footer() from the server but Footer is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
 }, "[project]/src/components/layout/footer.tsx", "Footer");
 }),
-"[project]/src/components/layout/footer.tsx [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/src/components/layout/footer.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
 
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/src/components/layout/footer.tsx [app-rsc] (client reference proxy) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__ = __turbopack_context__.i("[project]/src/components/layout/footer.tsx [app-rsc] (client reference proxy)");
@@ -132,7 +135,8 @@ const PageTransition = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_
     throw new Error("Attempted to call PageTransition() from the server but PageTransition is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
 }, "[project]/src/components/ui/page-transition.tsx", "PageTransition");
 }),
-"[project]/src/components/ui/page-transition.tsx [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/src/components/ui/page-transition.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
 
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$page$2d$transition$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/src/components/ui/page-transition.tsx [app-rsc] (client reference proxy) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$page$2d$transition$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__ = __turbopack_context__.i("[project]/src/components/ui/page-transition.tsx [app-rsc] (client reference proxy)");
@@ -167,7 +171,8 @@ const IntroVideo = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modu
     throw new Error("Attempted to call IntroVideo() from the server but IntroVideo is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
 }, "[project]/src/components/ui/intro-video.tsx", "IntroVideo");
 }),
-"[project]/src/components/ui/intro-video.tsx [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/src/components/ui/intro-video.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
 
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$intro$2d$video$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/src/components/ui/intro-video.tsx [app-rsc] (client reference proxy) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$intro$2d$video$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__ = __turbopack_context__.i("[project]/src/components/ui/intro-video.tsx [app-rsc] (client reference proxy)");

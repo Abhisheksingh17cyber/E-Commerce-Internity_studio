@@ -16,7 +16,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Abhisheksingh17cyber/E-Commerce-Internity_studio/issues"
   },
@@ -51,5 +51,8 @@
     "typescript": "^5.9.3",
     "zod": "^4.3.6",
     "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18"
   }
 }
