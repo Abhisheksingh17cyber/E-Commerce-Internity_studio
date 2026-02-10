@@ -2,8 +2,8 @@
 
 import { useRef, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import Link from 'next/link'
 import { ChevronDown, Play } from 'lucide-react'
+import { TransitionLink } from '@/components/ui/transition-link'
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -88,9 +88,9 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-6 text-base md:text-lg text-luxury-cream/70 max-w-xl leading-relaxed"
+          className="mt-6 mb-16 text-base md:text-lg text-luxury-cream/70 max-w-xl leading-relaxed"
         >
-          Immerse yourself in a world of exquisite fragrances, 
+          Immerse yourself in a world of exquisite fragrances,
           crafted with the finest ingredients from around the globe.
         </motion.p>
 
@@ -99,44 +99,45 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="flex flex-col sm:flex-row items-center gap-4 mt-10"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12 mb-20"
         >
-          <Link href="/collections" className="luxury-button">
+          <TransitionLink href="/collections" className="luxury-button">
             Explore Collections
-          </Link>
-          <Link
+          </TransitionLink>
+          <TransitionLink
             href="/about"
             className="flex items-center gap-2 px-8 py-4 text-sm uppercase tracking-[0.2em] text-luxury-cream/80 hover:text-luxury-gold transition-colors group"
           >
             <Play className="w-4 h-4 group-hover:scale-110 transition-transform" />
             Our Story
-          </Link>
+          </TransitionLink>
         </motion.div>
+
 
         {/* Featured Badge */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="absolute bottom-32 left-1/2 -translate-x-1/2 flex items-center gap-8"
+          className="absolute bottom-40 md:bottom-44 left-1/2 -translate-x-1/2 flex items-center gap-12 md:gap-20"
         >
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-display text-luxury-gold">20+</p>
-            <p className="text-xs uppercase tracking-wider text-luxury-cream/60">
+            <p className="text-3xl md:text-4xl font-display text-luxury-gold mb-2">20+</p>
+            <p className="text-xs uppercase tracking-wider text-luxury-cream/60 whitespace-nowrap">
               Years of Excellence
             </p>
           </div>
-          <div className="w-px h-12 bg-luxury-gold/30" />
+          <div className="w-px h-16 bg-luxury-gold/60" />
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-display text-luxury-gold">50+</p>
-            <p className="text-xs uppercase tracking-wider text-luxury-cream/60">
+            <p className="text-3xl md:text-4xl font-display text-luxury-gold mb-2">50+</p>
+            <p className="text-xs uppercase tracking-wider text-luxury-cream/60 whitespace-nowrap">
               Signature Scents
             </p>
           </div>
-          <div className="w-px h-12 bg-luxury-gold/30" />
+          <div className="w-px h-16 bg-luxury-gold/60" />
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-display text-luxury-gold">100k+</p>
-            <p className="text-xs uppercase tracking-wider text-luxury-cream/60">
+            <p className="text-3xl md:text-4xl font-display text-luxury-gold mb-2">100k+</p>
+            <p className="text-xs uppercase tracking-wider text-luxury-cream/60 whitespace-nowrap">
               Happy Customers
             </p>
           </div>

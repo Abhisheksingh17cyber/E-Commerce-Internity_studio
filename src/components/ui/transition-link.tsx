@@ -23,7 +23,7 @@ export function TransitionLink({ href, children, className }: TransitionLinkProp
             // Navigate after spray starts
             setTimeout(() => {
                 window.location.href = href
-            }, 300)
+            }, 100) // Reduced from 300ms to 100ms for faster navigation
         }
     }
 

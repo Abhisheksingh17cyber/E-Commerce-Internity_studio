@@ -8,9 +8,24 @@ export function IntroVideo() {
   const { showIntro, hideIntro } = useUIStore()
   const [isLoaded, setIsLoaded] = useState(false)
   const [showSkip, setShowSkip] = useState(false)
+  const [shouldShowIntro, setShouldShowIntro] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
+  // Check if intro has been shown before
   useEffect(() => {
+    const hasSeenIntro = localStorage.getItem('internity-intro-seen')
+
+    if (!hasSeenIntro) {
+      setShouldShowIntro(true)
+    } else {
+      // If already seen, hide immediately
+      hideIntro()
+    }
+  }, [hideIntro])
+
+  useEffect(() => {
+    if (!shouldShowIntro) return
+
     // Show skip button after 2 seconds
     const skipTimer = setTimeout(() => {
       setShowSkip(true)
@@ -19,20 +34,23 @@ export function IntroVideo() {
     // Auto-hide intro after video ends or timeout
     const autoHideTimer = setTimeout(() => {
       hideIntro()
+      localStorage.setItem('internity-intro-seen', 'true')
     }, 8000) // Maximum 8 seconds
 
     return () => {
       clearTimeout(skipTimer)
       clearTimeout(autoHideTimer)
     }
-  }, [hideIntro])
+  }, [hideIntro, shouldShowIntro])
 
   const handleVideoEnd = () => {
     hideIntro()
+    localStorage.setItem('internity-intro-seen', 'true')
   }
 
   const handleSkip = () => {
     hideIntro()
+    localStorage.setItem('internity-intro-seen', 'true')
   }
 
   // Check if video exists
@@ -82,13 +100,13 @@ export function IntroVideo() {
                 {[...Array(30)].map((_, i) => (
                   <motion.div
                     key={i}
-                    initial={{ 
+                    initial={{
                       opacity: 0,
                       x: '50vw',
                       y: '50vh',
                       scale: 0
                     }}
-                    animate={{ 
+                    animate={{
                       opacity: [0, 0.5, 0],
                       x: `${Math.random() * 100}vw`,
                       y: `${Math.random() * 100}vh`,
@@ -127,7 +145,7 @@ export function IntroVideo() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.5 }}
                 >
-                  <motion.h1 
+                  <motion.h1
                     className="text-4xl md:text-6xl lg:text-7xl font-display font-light tracking-[0.4em] text-luxury-cream"
                     initial={{ letterSpacing: '0.8em', opacity: 0 }}
                     animate={{ letterSpacing: '0.4em', opacity: 1 }}

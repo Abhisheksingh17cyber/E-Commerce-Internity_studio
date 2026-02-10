@@ -52,7 +52,7 @@ export function PageTransition() {
       generateDroplets()
       const timer = setTimeout(() => {
         endPageTransition()
-      }, 2000) // Extended duration for logo reveal
+      }, 1000) // Reduced from 2000ms to 1000ms for faster transitions
       return () => clearTimeout(timer)
     }
   }, [isPageTransitioning, generateDroplets, endPageTransition])
@@ -80,7 +80,7 @@ export function PageTransition() {
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: [0, 1, 1, 0], scale: [0.8, 1.05, 1, 1.1], y: [20, 0, 0, -10] }}
-            transition={{ duration: 1.8, times: [0, 0.3, 0.7, 1], ease: 'easeInOut' }}
+            transition={{ duration: 0.9, times: [0, 0.2, 0.7, 1], ease: 'easeInOut' }}
             className="absolute inset-0 flex items-center justify-center z-10"
           >
             <div className="relative">
@@ -88,7 +88,7 @@ export function PageTransition() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: [0, 0.4, 0.2, 0], scale: [0.5, 1.2, 1.5, 2] }}
-                transition={{ duration: 1.8, ease: 'easeOut' }}
+                transition={{ duration: 0.9, ease: 'easeOut' }}
                 className="absolute inset-0 -m-20"
                 style={{
                   background: 'radial-gradient(circle, rgba(201,169,98,0.3) 0%, transparent 70%)',
