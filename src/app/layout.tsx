@@ -7,6 +7,7 @@ import { PageTransition } from '@/components/ui/page-transition'
 import { IntroVideo } from '@/components/ui/intro-video'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://internity-perfume.vercel.app'),
   title: 'INTERNITY PERFUME | Luxury Fragrances',
   description: 'Discover the art of luxury perfumery. INTERNITY PERFUME crafts exquisite fragrances that capture timeless elegance and sophistication.',
   keywords: ['luxury perfume', 'designer fragrance', 'INTERNITY', 'premium scents', 'exclusive perfumery'],
