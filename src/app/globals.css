@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 43 41% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 43 41% 60%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 43 41% 60%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 43 41% 60%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 43 41% 40%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 43 41% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    @apply bg-luxury-gold/30 text-luxury-black;
+  }
+}
+
+@layer components {
+  .luxury-text {
+    @apply font-serif tracking-wide;
+  }
+
+  .luxury-heading {
+    @apply font-display font-light tracking-[0.2em] uppercase;
+  }
+
+  .luxury-button {
+    @apply relative overflow-hidden bg-luxury-black text-luxury-cream border border-luxury-gold/30 px-8 py-4 font-sans text-sm uppercase tracking-[0.2em] transition-all duration-500 hover:bg-luxury-gold hover:text-luxury-black hover:border-luxury-gold;
+  }
+
+  .luxury-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full;
+    animation: shimmer 2s infinite;
+  }
+
+  .luxury-card {
+    @apply bg-luxury-dark/50 backdrop-blur-sm border border-luxury-gold/10 rounded-lg p-6 transition-all duration-500 hover:border-luxury-gold/30 hover:shadow-xl hover:shadow-luxury-gold/5;
+  }
+
+  .luxury-input {
+    @apply w-full bg-transparent border-b border-luxury-gold/30 py-3 px-0 text-luxury-cream placeholder:text-luxury-cream/40 focus:border-luxury-gold focus:outline-none transition-colors duration-300;
+  }
+
+  .luxury-link {
+    @apply relative text-luxury-cream/80 hover:text-luxury-gold transition-colors duration-300;
+  }
+
+  .luxury-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-luxury-gold transition-all duration-300;
+  }
+
+  .luxury-link:hover::after {
+    @apply w-full;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/5 border border-white/10;
+  }
+
+  .gold-shimmer {
+    @apply relative overflow-hidden;
+    background: linear-gradient(
+      90deg,
+      #c9a962 0%,
+      #e8d5a3 25%,
+      #c9a962 50%,
+      #b8944d 75%,
+      #c9a962 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9a962;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d9b972;
+}
+
+/* Page Transition Overlay */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.spray-droplet {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(ellipse at center, rgba(201, 169, 98, 0.8) 0%, rgba(201, 169, 98, 0.2) 50%, transparent 70%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  filter: blur(1px);
+}
+
+/* Intro Video Styles */
+.intro-video-container {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Product Card Hover Effects */
+.product-card {
+  @apply relative overflow-hidden;
+}
+
+.product-card::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-t from-luxury-black via-transparent to-transparent opacity-0 transition-opacity duration-500;
+}
+
+.product-card:hover::before {
+  @apply opacity-100;
+}
+
+/* Smooth Image Loading */
+.image-loading {
+  @apply animate-pulse bg-luxury-charcoal;
+}
+
+/* Navigation Blur Effect */
+.nav-blur {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
