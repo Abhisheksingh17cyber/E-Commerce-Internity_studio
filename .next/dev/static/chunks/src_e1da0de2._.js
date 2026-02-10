@@ -2597,9 +2597,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/store/index.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
+;
 ;
 ;
 ;
@@ -2610,22 +2612,22 @@ function PageTransition() {
     const generateDroplets = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "PageTransition.useCallback[generateDroplets]": ()=>{
             const droplets = [];
-            const count = 80 // Number of spray droplets
+            const count = 120 // Increased droplet count for fuller spray effect
             ;
             for(let i = 0; i < count; i++){
                 // Spray originates from center-top, spreading outward
                 const centerX = window.innerWidth / 2;
                 const centerY = 100;
-                // Random angle for spray direction (semicircle downward)
-                const angle = Math.random() * 180 * (Math.PI / 180);
-                const distance = Math.random() * Math.max(window.innerWidth, window.innerHeight);
+                // Random angle for spray direction (wide semicircle downward)
+                const angle = (Math.random() * 200 - 10) * Math.PI / 180;
+                const distance = Math.random() * Math.max(window.innerWidth, window.innerHeight) * 0.9;
                 droplets.push({
                     id: i,
-                    x: centerX + Math.cos(angle) * distance * 0.3,
-                    y: centerY + Math.sin(angle) * distance * 0.8,
-                    size: Math.random() * 12 + 4,
-                    delay: Math.random() * 0.3,
-                    duration: Math.random() * 0.8 + 0.5,
+                    x: centerX + Math.cos(angle) * distance * 0.4,
+                    y: centerY + Math.sin(angle) * distance * 0.85,
+                    size: Math.random() * 14 + 3,
+                    delay: Math.random() * 0.2,
+                    duration: Math.random() * 0.9 + 0.6,
                     angle: Math.random() * 360
                 });
             }
@@ -2641,7 +2643,8 @@ function PageTransition() {
                     "PageTransition.useEffect.timer": ()=>{
                         endPageTransition();
                     }
-                }["PageTransition.useEffect.timer"], 1500);
+                }["PageTransition.useEffect.timer"], 2000) // Extended duration for logo reveal
+                ;
                 return ({
                     "PageTransition.useEffect": ()=>clearTimeout(timer)
                 })["PageTransition.useEffect"];
@@ -2679,12 +2682,108 @@ function PageTransition() {
                         opacity: 0
                     },
                     transition: {
-                        duration: 0.4
+                        duration: 0.5
                     },
-                    className: "absolute inset-0 bg-luxury-black/90"
+                    className: "absolute inset-0 bg-luxury-black/95"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/page-transition.tsx",
-                    lineNumber: 70,
+                    lineNumber: 71,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                    initial: {
+                        opacity: 0,
+                        scale: 0.8,
+                        y: 20
+                    },
+                    animate: {
+                        opacity: [
+                            0,
+                            1,
+                            1,
+                            0
+                        ],
+                        scale: [
+                            0.8,
+                            1.05,
+                            1,
+                            1.1
+                        ],
+                        y: [
+                            20,
+                            0,
+                            0,
+                            -10
+                        ]
+                    },
+                    transition: {
+                        duration: 1.8,
+                        times: [
+                            0,
+                            0.3,
+                            0.7,
+                            1
+                        ],
+                        ease: 'easeInOut'
+                    },
+                    className: "absolute inset-0 flex items-center justify-center z-10",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                                initial: {
+                                    opacity: 0,
+                                    scale: 0.5
+                                },
+                                animate: {
+                                    opacity: [
+                                        0,
+                                        0.4,
+                                        0.2,
+                                        0
+                                    ],
+                                    scale: [
+                                        0.5,
+                                        1.2,
+                                        1.5,
+                                        2
+                                    ]
+                                },
+                                transition: {
+                                    duration: 1.8,
+                                    ease: 'easeOut'
+                                },
+                                className: "absolute inset-0 -m-20",
+                                style: {
+                                    background: 'radial-gradient(circle, rgba(201,169,98,0.3) 0%, transparent 70%)',
+                                    filter: 'blur(40px)'
+                                }
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/page-transition.tsx",
+                                lineNumber: 88,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                src: "/images/logo.png",
+                                alt: "INTERNITY PERFUME",
+                                width: 300,
+                                height: 300,
+                                className: "relative z-10",
+                                priority: true
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/page-transition.tsx",
+                                lineNumber: 99,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/ui/page-transition.tsx",
+                        lineNumber: 86,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ui/page-transition.tsx",
+                    lineNumber: 80,
                     columnNumber: 11
                 }, this),
                 dropletsRef.current.map((droplet)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2692,26 +2791,28 @@ function PageTransition() {
                             opacity: 0,
                             scale: 0,
                             x: window.innerWidth / 2,
-                            y: 0
+                            y: 80
                         },
                         animate: {
                             opacity: [
                                 0,
+                                1,
                                 0.9,
-                                0.7,
+                                0.6,
                                 0
                             ],
                             scale: [
                                 0,
-                                1.2,
-                                1,
+                                1.3,
+                                1.1,
+                                0.9,
                                 0.3
                             ],
                             x: droplet.x,
                             y: droplet.y
                         },
                         transition: {
-                            duration: droplet.duration + 0.5,
+                            duration: droplet.duration + 0.6,
                             delay: droplet.delay,
                             ease: [
                                 0.32,
@@ -2723,61 +2824,105 @@ function PageTransition() {
                         style: {
                             position: 'absolute',
                             width: droplet.size,
-                            height: droplet.size * 1.2,
+                            height: droplet.size * 1.3,
                             background: `radial-gradient(ellipse at 30% 30%, 
-                  rgba(201, 169, 98, 0.9) 0%, 
-                  rgba(201, 169, 98, 0.5) 40%, 
-                  rgba(201, 169, 98, 0.1) 70%, 
+                  rgba(201, 169, 98, 0.95) 0%, 
+                  rgba(201, 169, 98, 0.6) 35%, 
+                  rgba(201, 169, 98, 0.2) 65%, 
                   transparent 100%)`,
                             borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                            filter: 'blur(0.5px)',
+                            filter: 'blur(0.8px)',
                             transform: `rotate(${droplet.angle}deg)`
                         }
                     }, droplet.id, false, {
                         fileName: "[project]/src/components/ui/page-transition.tsx",
-                        lineNumber: 80,
+                        lineNumber: 112,
                         columnNumber: 13
                     }, this)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                     initial: {
                         opacity: 0,
-                        scale: 0.5
+                        scale: 0.3
                     },
                     animate: {
                         opacity: [
                             0,
-                            0.6,
+                            0.8,
+                            0.4,
                             0
                         ],
                         scale: [
-                            0.5,
-                            2,
-                            3
+                            0.3,
+                            1.5,
+                            2.5,
+                            4
                         ]
                     },
                     transition: {
-                        duration: 1.2,
+                        duration: 1.5,
                         ease: 'easeOut'
                     },
-                    className: "absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full",
+                    className: "absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full",
                     style: {
-                        background: 'radial-gradient(circle, rgba(201,169,98,0.3) 0%, transparent 70%)',
-                        filter: 'blur(30px)'
+                        background: 'radial-gradient(circle, rgba(201,169,98,0.4) 0%, rgba(201,169,98,0.15) 40%, transparent 70%)',
+                        filter: 'blur(50px)'
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/page-transition.tsx",
-                    lineNumber: 116,
+                    lineNumber: 148,
                     columnNumber: 11
-                }, this)
+                }, this),
+                [
+                    ...Array(30)
+                ].map((_, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                        initial: {
+                            opacity: 0,
+                            x: window.innerWidth / 2,
+                            y: 100,
+                            scale: 0
+                        },
+                        animate: {
+                            opacity: [
+                                0,
+                                0.6,
+                                0.3,
+                                0
+                            ],
+                            x: window.innerWidth / 2 + (Math.random() - 0.5) * window.innerWidth * 0.8,
+                            y: 100 + Math.random() * window.innerHeight * 0.7,
+                            scale: [
+                                0,
+                                Math.random() * 2 + 1,
+                                Math.random() + 0.5
+                            ]
+                        },
+                        transition: {
+                            duration: Math.random() * 1.2 + 0.8,
+                            delay: Math.random() * 0.3,
+                            ease: 'easeOut'
+                        },
+                        style: {
+                            position: 'absolute',
+                            width: Math.random() * 30 + 10,
+                            height: Math.random() * 30 + 10,
+                            background: 'radial-gradient(circle, rgba(201,169,98,0.25) 0%, transparent 70%)',
+                            borderRadius: '50%',
+                            filter: 'blur(8px)'
+                        }
+                    }, `mist-${i}`, false, {
+                        fileName: "[project]/src/components/ui/page-transition.tsx",
+                        lineNumber: 161,
+                        columnNumber: 13
+                    }, this))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ui/page-transition.tsx",
-            lineNumber: 62,
+            lineNumber: 63,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ui/page-transition.tsx",
-        lineNumber: 60,
+        lineNumber: 61,
         columnNumber: 5
     }, this);
 }

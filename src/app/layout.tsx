@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { PageTransition } from '@/components/ui/page-transition'
 import { IntroVideo } from '@/components/ui/intro-video'
+import { CustomCursor } from '@/components/ui/custom-cursor'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://internity-perfume.vercel.app'),
@@ -63,6 +64,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-luxury-black text-luxury-cream antialiased font-sans">
         <Providers>
+          <CustomCursor />
           <IntroVideo />
           <PageTransition />
           <div className="flex min-h-screen flex-col">

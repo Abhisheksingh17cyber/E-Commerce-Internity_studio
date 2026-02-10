@@ -9,6 +9,7 @@ import { useCartStore, useUIStore } from '@/store'
 import { CartDrawer } from '@/components/cart/cart-drawer'
 import { SearchModal } from '@/components/ui/search-modal'
 import { MobileMenu } from '@/components/layout/mobile-menu'
+import { TransitionLink } from '@/components/ui/transition-link'
 
 const navLinks = [
   { href: '/collections', label: 'Collections' },
@@ -38,11 +39,10 @@ export function Header() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
             ? 'bg-luxury-black/95 nav-blur border-b border-luxury-gold/10'
             : 'bg-transparent'
-        }`}
+          }`}
       >
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between h-20 md:h-24">
@@ -58,13 +58,13 @@ export function Header() {
             {/* Navigation - Desktop */}
             <nav className="hidden lg:flex items-center space-x-12">
               {navLinks.slice(0, 2).map((link) => (
-                <Link
+                <TransitionLink
                   key={link.href}
                   href={link.href}
                   className="luxury-link text-sm uppercase tracking-[0.2em] font-light"
                 >
                   {link.label}
-                </Link>
+                </TransitionLink>
               ))}
             </nav>
 
@@ -86,13 +86,13 @@ export function Header() {
             {/* Navigation - Desktop (Right) */}
             <nav className="hidden lg:flex items-center space-x-12">
               {navLinks.slice(2).map((link) => (
-                <Link
+                <TransitionLink
                   key={link.href}
                   href={link.href}
                   className="luxury-link text-sm uppercase tracking-[0.2em] font-light"
                 >
                   {link.label}
-                </Link>
+                </TransitionLink>
               ))}
             </nav>
 
@@ -105,23 +105,23 @@ export function Header() {
               >
                 <Search className="w-5 h-5" />
               </button>
-              
-              <Link
+
+              <TransitionLink
                 href="/wishlist"
                 className="hidden md:block p-2 text-luxury-cream hover:text-luxury-gold transition-colors"
                 aria-label="Wishlist"
               >
                 <Heart className="w-5 h-5" />
-              </Link>
-              
-              <Link
+              </TransitionLink>
+
+              <TransitionLink
                 href="/account"
                 className="hidden md:block p-2 text-luxury-cream hover:text-luxury-gold transition-colors"
                 aria-label="Account"
               >
                 <User className="w-5 h-5" />
-              </Link>
-              
+              </TransitionLink>
+
               <button
                 onClick={openCart}
                 className="relative p-2 text-luxury-cream hover:text-luxury-gold transition-colors"
